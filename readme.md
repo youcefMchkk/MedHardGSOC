@@ -15,6 +15,7 @@
     in your package. Run the test on the Wiki page.
 
 ## installation of the package
+you can install tha package with `devtools::install_github("youcefMchkk/MedHardGSOC")`
 
 
 ## how to use the package
