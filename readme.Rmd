@@ -20,6 +20,12 @@ knitr::opts_chunk$set(
 * Medium: set up a GitHub repo with a new R package; use r-lib/actions to automatically check the package after every commit; play with the GitHub action so that some test functions are run.
 * Hard: implement Dijkstra's algorithm with C++ with an Rcpp interface in your package. Run the test on the Wiki page.
 
+## installation of the package
+
+
+## how to use the package
+the package have a function that calculate the shortest path of a graph using the dijakstra algorithm, it takes as an input an adjacency matrix and the starting node in which we want to start running the algorithm, the function will return a matrix with 2 rows , the first row is a vector that represent the shortest distance from the starting node to each the other nodes, the second row represent the previous vector, which have what is the previous node that we have to come from so we'll get the shortest distance
+
 ## adjacency matrix input
 ```{r , echo=FALSE}
 adj_matrix = matrix (c (0 , 4 , 1 , 0 , 0 ,
