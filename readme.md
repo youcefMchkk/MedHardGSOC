@@ -14,6 +14,12 @@
 -   Hard: implement Dijkstra’s algorithm with C++ with an Rcpp interface
     in your package. Run the test on the Wiki page.
 
+## installation of the package
+
+
+## how to use the package
+the package have a function that calculate the shortest path of a graph using the dijakstra algorithm, it takes as an input an adjacency matrix and the starting node in which we want to start running the algorithm, the function will return a matrix with 2 rows , the first row is a vector that represent the shortest distance from the starting node to each the other nodes, the second row represent the previous vector, which have what is the previous node that we have to come from so we'll get the shortest distance.
+
 ## adjacency matrix input
 
     #>      [,1] [,2] [,3] [,4] [,5]
