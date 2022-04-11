@@ -1,0 +1,3 @@
+useDynLib(MedHardGSOC, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
