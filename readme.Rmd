@@ -1,0 +1,81 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Medium-Hard test result
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+## the task
+* Medium: set up a GitHub repo with a new R package; use r-lib/actions to automatically check the package after every commit; play with the GitHub action so that some test functions are run.
+* Hard: implement Dijkstra's algorithm with C++ with an Rcpp interface in your package. Run the test on the Wiki page.
+
+## adjacency matrix input
+```{r , echo=FALSE}
+adj_matrix = matrix (c (0 , 4 , 1 , 0 , 0 ,
+                        0 , 0 , 0 , 1 , 0 ,
+                        0 , 2 , 0 , 5 , 0 ,
+                        0 , 0 , 0 , 0 , 3 ,
+                        0 , 0 , 0 , 0 , 0),
+                     nrow = 5 , ncol = 5 , byrow = TRUE)
+adj_matrix
+```
+
+## visualtization of the graph
+```{r , echo=FALSE , message=FALSE, warning=FALSE}
+library (igraph)
+set.seed(50)
+adj_matrix = matrix (c (0 , 4 , 1 , 0 , 0 ,
+                        0 , 0 , 0 , 1 , 0 ,
+                        0 , 2 , 0 , 5 , 0 ,
+                        0 , 0 , 0 , 0 , 3 ,
+                        0 , 0 , 0 , 0 , 0),
+                     nrow = 5 , ncol = 5 , byrow = TRUE)
+g <- graph_from_adjacency_matrix(adj_matrix ,mode = "directed" , weighted = TRUE)
+
+edge_w <- c(4 , 1 , 1 , 2 , 5 , 3)
+plot (g , edge.label = edge_w)
+```
+
+## the result of the dijkstra algorithm
+```{r , echo=FALSE , warning=FALSE , message=FALSE}
+library(MedHardGSOC)
+adj_matrix = matrix (c (0 , 4 , 1 , 0 , 0 ,
+                        0 , 0 , 0 , 1 , 0 ,
+                        0 , 2 , 0 , 5 , 0 ,
+                        0 , 0 , 0 , 0 , 3 ,
+                        0 , 0 , 0 , 0 , 0),
+                     nrow = 5 , ncol = 5 , byrow = TRUE)
+v <- dijkstraAlgorithm(adj_matrix = adj_matrix , starting = 0)
+rownames(v) <- c("distance" , "previous")
+v
+
+```
+
+
+## visualization of the dijakstra algorithm
+```{r , echo=FALSE , message=FALSE, warning=FALSE}
+library (igraph)
+set.seed(50)
+adj_matrix = matrix (c (0 , 4 , 1 , 0 , 0 ,
+                        0 , 0 , 0 , 1 , 0 ,
+                        0 , 2 , 0 , 5 , 0 ,
+                        0 , 0 , 0 , 0 , 3 ,
+                        0 , 0 , 0 , 0 , 0),
+                     nrow = 5 , ncol = 5 , byrow = TRUE)
+g <- graph_from_adjacency_matrix(adj_matrix ,mode = "directed" , weighted = TRUE)
+
+edge_c <- c("black" , "red" , "red" , "red" , "black" , "red")
+edge_w <- c(4 , 1 , 1 , 2 , 5 , 3)
+plot (g , edge.color = edge_c , edge.label = edge_w)
+```
